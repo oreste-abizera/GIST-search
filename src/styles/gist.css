@@ -10,6 +10,7 @@
   justify-content: space-between;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  flex-wrap: wrap;
 }
 
 .gist:hover {
@@ -24,8 +25,9 @@
 
 .gist__title {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0.5rem;
+  max-width: 600px;
 }
 
 .gist__date {
@@ -51,4 +53,29 @@
   flex-direction: row;
   align-items: center;
   margin: 0 0.5rem;
+}
+
+.gist-forks {
+  margin: 1rem 1rem 0.5rem 0rem;
+}
+
+.gist-forks > h4 {
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  margin: 0 0.5rem;
+}
+
+.gist-forks > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.gist-forks > div img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }

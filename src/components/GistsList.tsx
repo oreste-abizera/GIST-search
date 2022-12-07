@@ -1,4 +1,5 @@
 import React from "react";
+import GistForks from "./GistForks";
 
 type Props = {
   gists: any[];
@@ -20,13 +21,14 @@ const GistsList = ({ gists }: Props) => {
             </div>
             <div className="gist__file-tags">
               {Object.keys(gist.files)
-                .map((file: any) => gist.files[file].type)
-                .map((type: string) => (
-                  <div className="gist__file-tag badge" key={type}>
-                    <p className="gist__file-tag-name">{type}</p>
+                .map((file: any) => gist.files[file].language)
+                .map((language: string) => (
+                  <div className="gist__file-tag badge" key={language}>
+                    <p className="gist__file-tag-name">{language}</p>
                   </div>
                 ))}
             </div>
+            <GistForks forksUrl={gist.forks_url}></GistForks>
           </div>
           <div className="gist__body">
             <div className="gist__files">

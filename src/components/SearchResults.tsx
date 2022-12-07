@@ -18,6 +18,13 @@ const SearchResults = ({ gists, loading, error, username }: Props) => {
           <p>No gists found for this user</p>
         </div>
       )}
+      {!loading && !error && gists.length === 0 && (
+        <div className="alert alert-info">
+          <p>
+            Try searching for these users: addyosmani, octocat, xeusteerapat
+          </p>
+        </div>
+      )}
       {gists.length > 0 && (
         <div className="results">
           <div className="alert alert-success">

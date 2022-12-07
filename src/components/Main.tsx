@@ -37,8 +37,6 @@ const Main = (props: Props) => {
     }
   };
 
-  console.log({ gists, loading, error });
-
   return (
     <div>
       <Title text="GitHub GIST Search API Demo" />
