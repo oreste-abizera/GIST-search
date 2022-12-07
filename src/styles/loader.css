@@ -6,15 +6,14 @@
   align-items: center;
 }
 
-h1 {
+.loader h1 {
   position: relative;
-  font-size: 10px;
+  font-size: 40px;
   font-weight: 400;
   color: #4d4d4d;
-  -webkit-text-stroke: 2px #666666;
 }
 
-h1::before {
+.loader h1::before {
   position: absolute;
   content: attr(data-text);
   top: 0;
