@@ -9,13 +9,24 @@ const GistsList = ({ gists }: Props) => {
     <div className="">
       {gists.map((gist: any) => (
         <div className="gist" key={gist.id}>
-          <div className="gist__header">
-            <h3 className="gist__title">
-              {gist.description || "No Description"}
-            </h3>
-            <p className="gist__date">
-              {new Date(gist.created_at).toDateString()}
-            </p>
+          <div>
+            <div className="gist__header">
+              <h3 className="gist__title">
+                {gist.description || "No Description"}
+              </h3>
+              <p className="gist__date">
+                {new Date(gist.created_at).toDateString()}
+              </p>
+            </div>
+            <div className="gist__file-tags">
+              {Object.keys(gist.files)
+                .map((file: any) => gist.files[file].type)
+                .map((type: string) => (
+                  <div className="gist__file-tag badge" key={type}>
+                    <p className="gist__file-tag-name">{type}</p>
+                  </div>
+                ))}
+            </div>
           </div>
           <div className="gist__body">
             <div className="gist__files">

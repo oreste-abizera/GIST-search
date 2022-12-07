@@ -6,9 +6,10 @@ type Props = {
   gists: any[];
   loading: boolean;
   error: boolean;
+  username: string;
 };
 
-const SearchResults = ({ gists, loading, error }: Props) => {
+const SearchResults = ({ gists, loading, error, username }: Props) => {
   return (
     <div className="search-results">
       {loading && <Loader />}
@@ -20,7 +21,9 @@ const SearchResults = ({ gists, loading, error }: Props) => {
       {gists.length > 0 && (
         <div className="results">
           <div className="alert alert-success">
-            <p>{gists.length} gists found</p>
+            <p>
+              {gists.length} {username}'s gists found
+            </p>
           </div>
           <GistsList gists={gists} />
         </div>

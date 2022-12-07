@@ -45,3 +45,10 @@
   margin: 0 0.5rem;
   text-align: right;
 }
+
+.gist__file-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0.5rem;
+}

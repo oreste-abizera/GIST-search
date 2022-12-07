@@ -1,6 +1,7 @@
 @import url("./styles/alert.css");
 @import url("./styles/loader.css");
 @import url("./styles/gist.css");
+@import url("./styles/badge.css");
 
 .title {
   font-size: 3rem;

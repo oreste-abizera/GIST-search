@@ -11,6 +11,7 @@ const Main = (props: Props) => {
   const [gists, setGists] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
+  const [username, setUsername] = React.useState("");
 
   const searchByUsername = async (username: string) => {
     if (!username) {
@@ -32,6 +33,7 @@ const Main = (props: Props) => {
       setError(true);
     } finally {
       setLoading(false);
+      setUsername(username);
     }
   };
 
@@ -42,7 +44,12 @@ const Main = (props: Props) => {
       <Title text="GitHub GIST Search API Demo" />
       <Divider>Search Gists by User</Divider>
       <SearchInput searchByUsername={searchByUsername} />
-      <SearchResults gists={gists} loading={loading} error={error} />
+      <SearchResults
+        gists={gists}
+        loading={loading}
+        error={error}
+        username={username}
+      />
     </div>
   );
 };
