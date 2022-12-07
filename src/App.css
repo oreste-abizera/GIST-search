@@ -1,3 +1,6 @@
+@import url("./styles/alert.css");
+@import url("./styles/loader.css");
+
 .title {
   font-size: 3rem;
   text-align: center;
@@ -47,14 +50,14 @@
   outline: none;
   height: 100%;
   border: 1px solid #eaeaea;
+  border-radius: 0.3rem;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  border-radius: 0.3rem;
 }
 
 .search-input > button {
   border: none;
-  background: #646cff;
+  background: #4f46e5;
   color: #fff;
   padding: 1.2rem 3rem;
   border-radius: 0.3rem;
@@ -63,4 +66,8 @@
   font-weight: 500;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+.search-results {
+  margin: 0 1rem;
 }

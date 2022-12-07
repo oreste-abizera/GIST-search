@@ -1,13 +1,29 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  searchByUsername: (username: string) => void;
+};
 
-const SearchInput = (props: Props) => {
+const SearchInput = ({ searchByUsername }: Props) => {
+  const [username, setUsername] = React.useState("");
+
+  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(event.target.value);
+  };
+
+  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    searchByUsername(username);
+  };
   return (
-    <div className="search-input">
-      <input></input>
-      <button>Search</button>
-    </div>
+    <form className="search-input" onSubmit={handleSearch}>
+      <input
+        placeholder="Enter Username"
+        value={username}
+        onChange={handleUsernameChange}
+      />
+      <button type="submit">Search</button>
+    </form>
   );
 };
 
